@@ -1,0 +1,120 @@
+<div>
+<p>Choose Table Below</p>
+<select data-ng-model="myVar">
+  <option value="Project Before Finnish List">Project about to finish 
+  <option value="Active Customers List">Active customers 
+  <option value="Big Customers List">Popular customers 
+  <option value="Active Projects List">Active projects 
+ 
+</select>
+
+
+<div data-ng-switch="myVar">
+<div data-ng-switch-default>
+<h1>WELCOME MANAGER</h1>
+</div>
+<div data-ng-switch-when="Active Projects List"  >
+<table   data-class="table table-bordered" >
+	<thead>
+		<h4>Active Projects </h4>
+		<tr>
+			<td>ProjectName</td>
+			<td>CustomerProjectManager</td>
+			<td>ProjectManagerEmail</td>
+			<td>ProjectManagerPhone</td>
+			<td>StartDate</td>
+			<td>EndDate</td>
+		   
+		</tr>
+	</thead>
+	<tr data-ng-repeat="x in managerActiveProjects">
+		<td>{{ x.projectname }}</td>
+		<td>{{ x.customerprojectmanager}}</td>
+	    <td>{{ x.projectmanageremail}}</td>
+		<td>{{ x.projectmanagerphone}}</td>
+		<td>{{ x.startdate }}</td>
+		<td>{{ x.enddate }}</td>
+		
+	</tr>
+</table >
+</div>
+<div  data-ng-switch-when="Project Before Finnish List">
+<table  class="table table-bordered" >
+	<thead>
+		<h4>Project About to Finish </h4>
+	       <tr>
+			<td>ProjectName</td>
+			<td>CustomerProjectManager</td>
+			<td>ProjectManagerEmail</td>
+			<td>ProjectManagerPhone</td>
+			<td>StartDate</td>
+			<td>EndDate</td>
+		</tr>
+	</thead>
+	
+	<tr data-ng-repeat="x in managerFinishProjects">
+		<td>{{ x.projectname }}</td>
+		<td>{{ x.customerprojectmanager }}</td>
+		<td>{{ x.projectmanageremail }}</td>
+		<td>{{ x.projectmanagerphone}}</td>
+	 	<td>{{ x.startdate}}</td>
+		<td>{{ x.enddate }}</td>
+		
+	</tr>
+</table>
+</div>
+<div  data-ng-switch-when="Active Customers List">
+<table class="table table-bordered" >
+	<thead>
+		<h4>Active Customers List</h4>
+		<tr>
+			<td>CompanyName</td>
+			<td>CompanyNumber</td>
+			<td>ContactName</td>
+			<td>Email</td>
+			<td>Phone</td>
+			<td>Active</td>
+		
+			
+		</tr>
+	</thead>
+	<tr data-ng-repeat="x in activeCustomers">
+		<td>{{ x.companyname }}</td>
+		<td>{{ x.companynumber }}</td>
+		<td>{{ x.contactname }}</td>
+		<td>{{ x.email }}</td>
+		<td>{{ x.phone }}</td>
+		<td>{{ x.active}}</td>
+	
+		
+	</tr>
+</table>
+</div>
+<div data-ng-switch-when="Big Customers List">
+<table class="table table-bordered" >
+	<thead>
+		<h4>Big Customers List</h4>
+		<tr>
+			<td>CompanyName</td>
+			<td>CompanyNumber</td>
+			<td>ContactName</td>
+			<td>Email</td>
+			<td>Phone</td>
+			<td>Projects Count</td>
+			
+		</tr>
+	</thead>
+	<tr data-ng-repeat="x in bigCustomers">
+		<td>{{ x.customer.companyname }}</td>
+		<td>{{ x.customer.companynumber }}</td>
+		<td>{{ x.customer.contactname }}</td>
+		<td>{{ x.customer.email }}</td>
+		<td>{{ x.customer.phone }}</td>
+		<td>{{ x.count}}</td>
+		
+	</tr>
+</table>
+</div>
+</div>
+</div>
+

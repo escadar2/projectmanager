@@ -1,0 +1,170 @@
+@CHARSET "windows-1255";
+
+.body {
+	width: 1024px;
+	 
+	background-color: #ffffff;
+}
+
+.B1 {
+	float: left;
+	font-size:xx-small;
+	display:none;
+	
+}
+
+.title {
+	text-align: center;
+	  
+	width: 980px;
+	height: 10%;
+}
+
+.center {
+	font-size: small;
+}
+
+ 
+
+.logo {
+	width: 45px;
+	float: right;
+	text-align: left;
+}
+
+.Menu {
+	 
+	text-align: center;
+	height: 10%;
+	background-color: silver;
+}
+
+.content {
+	
+	text-align:center;
+}
+.footer{
+
+ 
+text-align:center;
+height: 5%;
+}
+
+
+.div1 {
+	text-align: left;
+	width: 20px;
+	
+}
+
+.div2 {
+	
+}
+
+.date {
+	
+}
+
+.hourreportname {
+	
+}
+
+.MNY {
+	
+}
+
+.input1 {
+	
+}
+
+.B2 {
+	float: left;
+	 size:16%;
+    background-color: transparent;
+	display:none;
+}
+
+.B3 {
+	float: left;
+	 size:16%;
+    background-color: transparent;
+	display:none;
+}
+
+.B4 {
+	float: left;
+	display:none;
+    size:16%;
+    background-color: transparent;
+}
+
+.B5 {
+	float: left;
+ size:16%;
+    background-color: transparent;
+	display:none;
+}
+.B6 {
+	float: left;
+	 size:16%;
+     background-color: transparent;
+	display:none;
+}
+
+
+.ManagerTable1 {
+	width: 40px;
+	float:;
+}
+
+.ManagerTable2 {
+	width: 40px;
+}
+
+.ManagerTable3 {
+	
+}
+
+.CustomerTable {
+	
+}
+
+.CustomerManagmentTable {
+	
+}
+
+.searchform {
+	
+}
+
+.customerform {
+	
+}
+
+.employeform {
+	float: left;
+}
+
+.projectmanagerform {
+	
+}
+
+.settingform {
+	
+}
+
+.EmployeeTable {
+	
+}
+
+.hourreportlisttable {
+	width: 20px;
+}
+
+.manager {
+	width: 100%;
+}
+
+.projectmanagment {
+	width: 20px;
+}

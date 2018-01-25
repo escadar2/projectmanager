@@ -1,0 +1,66 @@
+
+	<div >
+		<div >
+		<form style="float: left;">
+			Search:<input type="text" data-ng-model="test">
+		</form>
+	</div>
+		<div>
+		<table  class="table table-bordered">
+			<thead>
+				<tr>
+					<td colspan="8">Customers List</td>
+				</tr>
+				<tr>
+					<td>CompanyName</td>
+					<td>CompanyNumber</td>
+					<td>ContactName</td>
+					<td>Email</td>
+					<td>Phone</td>
+					<td colspan="3">Action</td>
+				</tr>
+			</thead>
+			<tr ng-repeat="customer in customers |filter:test">
+				<td>{{customer.companyname}}</td>
+				<td>{{customer.companynumber}}</td>
+				<td>{{customer.contactname}}</td>
+				<td>{{customer.email}}</td>
+				<td>{{customer.phone}}</td>
+				<td><button class="btn btn-info" data-ng-click="RemoveCustomer($index)" >delete</button></td>
+				<td><button class="btn btn-info" data-ng-click="ShowObject($index)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">edit</button></td>
+				<td><button class="btn btn-info" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create</button></td>
+			</tr>
+		</table>
+	</div>
+	<div >
+	<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+		<form style="float: left;">
+			<p>Add New Customer</p>
+			<h6>CompanyName:</h6><input type="text" name="companyname" data-ng-model="companyname"  ></input><br>
+		    <h6>CompanyNumber:</h6><input type="text" name="companynumber" data-ng-model="companynumber"  ></input><br>
+		    <h6>ContactName:</h6><input type="text" name="contactname" data-ng-model="contactname" ></input><br>
+		    <h6>Email:</h6><input type="email" name="email" data-ng-model="email" ></input><br>
+		    <h6>Phone:</h6><input type="text" name="phone" data-ng-model="phone"></input><br>
+		    <h6>UserName:</h6><input type="text" name="username" data-ng-model="username" ></input><br>
+		    <h6>Password:</h6><input type="text" name="password" data-ng-model="password" ></input><br>
+			<button data-ng-click="addCustomer()" type="button">add</button>
+			<button type="button" data-ng-click="update(results)">Update</button>
+		</form>
+	</div>
+	 <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>

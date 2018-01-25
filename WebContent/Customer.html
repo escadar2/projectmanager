@@ -1,0 +1,25 @@
+<div >
+<table class="table table-bordered">
+	<tr >
+		<td>ProjectName</td>
+		 
+        <td>CustomerProjectManager</td>
+        <td>ProjectManagerEmail</td>
+        <td>ProjectManagerPhone</td>
+        <td>StartDate</td>
+        <td>EndDate</td>
+       
+	</tr>
+	<tr ng-repeat="x in customerActiveProjects">
+		<td>{{x.projectname}}</td>
+		 
+	    <td>{{x.customerprojectmanager}}</td>
+	    <td>{{x.projectmanageremail}}</td>
+	    <td>{{x.projectmanagerphone}}</td>
+	    <td>{{x.startdate}}</td>
+	    <td>{{x.enddate}}</td>
+	    
+	    
+	</tr>
+	</table>
+</div>

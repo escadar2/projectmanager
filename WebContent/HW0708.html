@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>
+HW0708
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript">
+
+var app = angular.module("tablesApp", []);
+app.controller("tablesCtrl", function ($scope) {
+$scope.users = [{
+FirstName:'Naai',
+LastName:'Ranldo' ,
+Job:'writer' ,
+Class:'publish' ,
+
+}, {
+FirstName:'ben',
+LastName:'aflek' ,
+Job:'actor' ,
+Class:'drama' ,
+
+}, {
+FirstName:'jon',
+LastName:'wiiliam' ,
+Job:'diger' ,
+Class:'13' ,
+
+}, {
+FirstName:'Sany',
+LastName:'doe' ,
+Job:'fireman' ,
+Class:'12' 
+
+}];
+
+$scope.addEmployee = function(){		
+	$scope.users.push({ 'FirstName':$scope.FirstName, 'LastName': $scope.LastName, 'Job':$scope.Job,'Class':$scope.Class});
+	$scope.FirstName='';
+	$scope.LastName='';
+	$scope.Job='';
+    $scope.Class='';
+};
+
+$scope.RemoveEmployee = function (f) {
+     $scope.users.splice(f,1);
+}
+  $scope.ShowObject = function($index){
+   
+  $scope.FirstName=$scope.users[$index].FirstName
+  $scope.LastName=$scope.users[$index].LastName
+  $scope.Job=$scope.users[$index].Job
+  $scope.Class=$scope.users[$index].Class
+  }
+  
+  function update(results){
+	  $scope.FirstName=$scope.users[0].FirstName
+	  $scope.LastName=$scope.users[0].LastName
+	  $scope.Job=$scope.users[0].Job
+	  $scope.Class=$scope.users[0].Class
+	  
+	  
+  }
+  
+  
+  
+  
+  
+       
+});
+
+
+</script>
+<style type="text/css">
+table, tr , td {
+border: 1px solid grey;
+border-collapse: collapse;
+padding: 5px;
+}
+table tr:nth-child(odd) {
+background-color: #d6f1f8;
+}
+table tr:nth-child(even) {
+background-color: #ffffff;
+}
+input {
+background-color: red;
+}
+
+Button{
+background-color:yellow;
+}
+form{
+text-align:right;
+border-top:100in; 
+
+}
+body{
+background-color:aqua;
+}
+p{
+
+color:green;
+}
+</style>
+
+</head>
+<body ng-app="tablesApp"  ng-controller="tablesCtrl" >
+<h2>EMPLOYYE-TABLE</h2>
+
+<table>
+<tr>
+<td>FirstName</td>
+<td>LastName</td>
+<td>Job</td>
+<td >Class</td> 
+<td>Action</td> 
+</tr>
+<tr ng-repeat="user in users |filter:test" ng-click="ShowObject($index)">
+<td >{{user.FirstName}}</td>
+<td >{{user.LastName}}</td>
+<td >{{user.Job}}</td>
+<td >{{user.Class}}</td>
+<td><button ng-click="RemoveEmployee($index)" type="button">X</button></td>
+
+</tr>
+</table>
+<form  >
+<p>Add New Employee</p>
+FirstName:<input type="text" name="FirstName" ng-model="FirstName" ></input><br>
+LastName:<input type="text" name="LastName" ng-model="LastName"></input><br>
+Job:<input type="text" name="Job" ng-model="Job"></input><br>
+Class:<input type="text" name="Class" ng-model="Class"></input><br>
+<button ng-click="addEmployee()" type="button">add</button>
+<button type="button" ng-click="update(results)">Update</button>
+</form>
+</body>
+</html>

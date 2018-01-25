@@ -1,0 +1,34 @@
+
+<div>
+<div>
+	<form style="float: right;">
+	 <h5>Search By Month And Year</h5>
+	YearAndMonth:<input type="date" data-format="MM-yyyy" data-ng-model="date" required="required"></input>
+	Project:<select data-ng-model="project"><option data-ng-repeat="x in projects" value="{{x.id}}">{{x.projectname}}</option></select>
+	<button data-ng-click="showresults()">Show Results</button>
+	</form>
+	</div>
+<table  class="table table-bordered">
+		<thead>
+			<tr>
+				<td colspan="8">Customer HourReport List</td>
+			</tr>
+			<tr>
+				 
+				<td>ProjectName</td>
+				<td>StartDate</td>
+				<td>EndDate</td>
+				<td>Description</td>
+			
+			</tr>
+		</thead>
+		<tr ng-repeat="x in customerhr">
+			 
+			<td>{{ x.project.projectname }}</td>
+			<td>{{ x.startdate }}</td>
+			<td>{{ x.enddate }}</td>
+			<td>{{ x.description}}
+		
+		</tr>
+	</table>
+</div>

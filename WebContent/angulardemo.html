@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+  <body ng-app=>
+	
+	<form name="myfrom">
+	    <p>First name:<input ng-style="color" ng-model="FirstName"></p>
+        <p>Last Name:<input ng-model="LastName"></p>
+		<p>Email:<input ng-model="email"></p>
+	</form>
+	
+	<div>{{FirstName+" "+ LastName+" "+ email}}</div>
+</body>
+</html>

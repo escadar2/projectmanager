@@ -1,0 +1,39 @@
+<div>
+	<form style="float: left;">
+			Search:<input type="text" name="Search" ng-model="test">
+		</form><br>	
+		<div style="float: right;">
+	<form>
+	 <h5>Search By Month And Year</h5>
+	YearAndMonth:<input type="date" data-format="MM-yyyy" data-ng-model="date" required="required"></input>
+	Project:<select data-ng-model="project"><option data-ng-repeat="x in projects" value="{{x.id}}">{{x.projectname}}</option></select>
+	Employee:<select data-ng-model="employee"><option data-ng-repeat="x in employees"  value="{{x.id}}">{{x.firstname}}&nbsp;{{x.lastname}}</option></select>
+	Customer:<select data-ng-model="customer"><option data-ng-repeat="x in customers" value="{{x.id}}">{{x.companyname}}</option></select>
+	<button style="float: right;" data-ng-click="showresults()">Show Results</button>
+	</form>
+	</div><br>
+	<table  class="table table-bordered">
+		<thead>
+			<tr>
+				<td colspan="8">Manager HourReport List</td>
+			</tr>
+			<tr>
+				<td>FirstName</td>
+				<td>LastName</td>
+				<td>ProjectName</td>
+				<td>StartDate</td>
+				<td>EndDate</td>
+				<td>Description</td>
+				
+			</tr>
+		</thead>
+		<tr data-ng-repeat="hr in managerhr  | filter:test ">
+			<td>{{ hr.employee.firstname }}</td>
+			<td>{{ hr.employee.lastname }}</td>
+			<td>{{ hr.project.projectname }}</td>
+			<td>{{ hr.startdate }}</td>
+			<td>{{ hr.enddate }}</td>
+			<td>{{ hr.description }}</td>
+		</tr>
+	</table>
+</div>

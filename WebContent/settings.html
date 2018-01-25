@@ -1,0 +1,29 @@
+<div class="settingform">
+<form>
+<p>Work Hours In a Day</p>
+<p>Enter Hours Per Employee</p>
+StartHour:<input type="time" name="StartHour" data-ng-model="starthour"><br>
+EndHour:<input type="time" name="EndHour" data-ng-model="endhour"><br>
+<button data-ng-click="addHour()" >Accept</button>
+</form>
+<div>
+<form>
+<label>Choose Work Days</label>
+<h6>sunday:</h6>
+<input type="checkbox" id="sunday" ><br>
+<h6>monday:</h6>
+<input type="checkbox" id="monday" ><br>  
+<h6>thirdday:</h6>
+<input type="checkbox" id="thirdday" ><br>  
+<h6>wednesday:</h6>
+<input type="checkbox" id="wednesday" ><br>  
+<h6>Thursday:</h6>
+<input type="checkbox" id="Thursday" ><br> 
+<h6>friday:</h6>
+<input type="checkbox" id="friday" ><br>
+<h6>saturday:</h6>
+<input type="checkbox" id="saturday"><br>
+<button data-ng-click="setDays()">Accept</button>           
+</form>
+</div>
+</div>

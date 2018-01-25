@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope, $http) {
+		$http.get('http://localhost/projectmanager/rest/employee/get?id=3')
+				.then(function(response) {
+					$scope.employees = response.data;
+                     console.log(response.data);
+				});
+	  
+	      
+	});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<table border="1">
+		<tr>
+			<td>id</td>
+			<td>firstname</td>
+			<td>lastname</td>
+			<td>email</td>
+			<td>phone</td>
+		</tr>
+		<tr >
+			<td>{{employees.id}}</td>
+			<td>{{employees.firstname}}</td>
+			<td>{{employees.lastname}}</td>
+			<td>{{employees.email}}</td>
+			<td>{{employees.phone}}</td>
+		</tr>
+	</table>
+</body>
+</html>

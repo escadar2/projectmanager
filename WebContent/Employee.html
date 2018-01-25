@@ -1,0 +1,57 @@
+
+  <div>
+     <div class="modal fade" id="myModal" role="dialog">
+       <div class="modal-dialog">
+        <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Modal Header</h4>
+                </div>
+                  <div class="modal-body">
+	        <form>
+                 <h3>HourReporting Form</h3>
+                 Choose Project:<select data-ng-model="project">
+	             <option value="{{x.project.id}}"
+	             data-ng-repeat="x in projectname"
+	             >{{x.project.projectname}}</option>
+	             </select><br>
+                 <h6>Date</h6>
+                 <input  data-ng-model="date" id="someid">
+                 <h6>StartHour</h6>
+                 <input type="time" min="{{a}}" max="{{b}}" data-ng-model="starthour">
+                 <h6>EndHour</h6>
+                 <input type="time" min="{{a}}" max="{{b}}" data-ng-model="endhour">
+                 <h6>Description</h6>
+                 <input type="text" data-ng-model="description">
+		      </form>
+		     <button style="font-size: xx-small;" data-ng-click="createHourReport()" class="btn btn-info btn-lg" >Create</button>
+		     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		 </div>
+		</div>
+	 </div>
+		    <div>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<td>Project</td>
+								<td>StartDate</td>
+								<td>EndDate</td>
+								<td>description</td>
+							</tr>
+						</thead>
+						<tr ng-repeat="e in sevenD">
+							<td>{{e.project.projectname}}</td>
+							<td>{{e.startdate}}</td>
+							<td>{{e.enddate}}</td>
+							<td>{{e.description}}</td>
+						</tr>
+				</table>
+				
+          </div>
+          <form>
+          <h6>Create HourReport</h6>
+          <button style="font-size: xx-small;" class="btn btn-info" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">add</button>
+          </form>

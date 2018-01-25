@@ -1,0 +1,90 @@
+
+<div>
+<div>
+<div>
+		<form style="float: left;">
+		Search:<input type="text" name="Search" ng-model="test">
+		</form>
+   </div>
+	<table class="table table-bordered">
+		<tr>
+		
+			<td>ProjectName</td>
+			<td>Customer</td>
+			<td>CustomerProjectManager</td>
+			<td>ProjectManagerEmail</td>
+			<td>ProjectManagerPhone</td>
+			<td>StartDate</td>
+			<td>EndDate</td>
+
+			<td colspan="3">Action</td>
+		</tr>
+		<tr data-ng-repeat="project in projects |filter:test">
+			
+			<td>{{project.projectname}}</td>
+			<td>{{project.customer.companyname}}</td>
+			<td>{{project.customerprojectmanager}}</td>
+			<td>{{project.projectmanageremail}}</td>
+			<td>{{project.projectmanagerphone}}</td>
+			<td>{{project.startdate}}</td>
+			<td>{{project.enddate}}</td>
+			<td><button data-ng-click="RemoveProject($index)" class="btn btn-info">delete</button></td>
+			<td><button data-ng-click="ShowObject($index)" class="btn btn-info" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">edit</button></td>
+            <td><button class="btn btn-info" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create</button></td>
+		</tr>
+	</table>
+</div>
+
+
+<div >
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+	<form style="float: left;">
+		<p>Add New Project</p>
+<h6>ProjectName:</h6><input  type="text" name="projectname" data-ng-model="projectname"></input><br>
+<div>
+<h6>Customer:</h6>
+<select data-ng-model="customer">
+ 
+  <option  value="{{customer.id}}" 
+   data-ng-repeat="customer in customers">
+    {{customer.companyname}}</option>
+</select>
+</div>
+<h6>CustomerProjectManager:</h6><input type="text" name="customerprojectmanager" data-ng-model="customerprojectmanager"></input><br>
+<h6>ProjectManagEremail:</h6><input type="email" name="projectmanageremail" data-ng-model="projectmanageremail"></input><br> 
+<h6>ProjectManagerPhone:</h6><input type="text" name="projectmanagerphone" data-ng-model="projectmanagerphone"></input><br>
+<h6>StratDate:</h6><input type="date"   name="startdate" data-ng-model="startdate"></input><br> 
+<h6>EndDate:</h6><input type="date"  name="enddate" data-ng-model="enddate"></input><br>
+<button type="button" data-ng-click="addProject()">add</button>
+<button type="button" data-ng-click="update()">Update</button>
+	</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<div style="float: right;">
+	 Choose Employee:<select data-ng-model="employee">
+	<option value="{{employee.id}}"
+	data-ng-repeat="employee in employees"
+	>{{employee.firstname}}&nbsp;{{employee.lastname}}</option>
+	</select>
+	Choose Project:<select data-ng-model="project">
+	<option value="{{project.id}}"
+	data-ng-repeat="project in projects"
+	>{{project.projectname}}</option>
+	</select><br>
+	<button style="float: right;" data-ng-click="createEmployeeProject()">Add</button>
+	</div>
+	 </div>
+        </div>
+      </div>
+	</div>
+</div>

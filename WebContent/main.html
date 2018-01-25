@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+ 
+ 
+</head>
+<body data-ng-app="myApp" data-ng-controller="myCtrl">
+	<div id = "center">
+	<table class="maintable">
+		<tr>
+			<td class="title" colspan="2">
+				<button class="B1  btn btn-danger"  data-ng-click="logout()">Logout</button> HOURREPORT APPLICATION</td>
+			<td class="logo" colspan="2"><img src="image/Ea-logo.jpg" ></td>
+		</tr>
+		<tr>
+			<td class="Menu" colspan="3">
+			     <div><a href="#!Customer"><button class="B3 btn">Customer</button></a></div>
+				 <div><a href="#!manager"><button class="B4 btn">Manager</button></a></div>
+				 <div><a href="#!Employee"><button class="B5 btn">Employee</button></a></div>
+				 <div><a href="#!EmployeeManagment"><button class="B4 btn ">EmployeeManagment</button></a></div>
+			     <div><a href="#!CustomerManagment"><button class="B4 btn ">CustomerManagment</button></a></div>
+			     <div><a href="#!ProjectManagment"><button class="B4 btn ">ProjectManagment</button></a></div>
+			     <div><a href="#!ManagerHourReportList"><button class="B4 btn ">ManagerHourReportList</button></a></div>
+			     <div><a href="#!settings"><button class="B4 btn ">settings</button></a></div>
+			     <div><a href="#!CustomerHourReportList"><button class="B3 btn ">CustomerHourReportList</button></a></div>
+			     <div><a href="#!EmployeeHourReportList"><button class="B5 btn ">EmployeeHourReportList</button></a></div>
+			</td>
+        </tr>
+        <tr >
+			<td class="content " colspan="3">
+			 <div data-ng-view></div>
+		    </td>
+       </tr>
+       <tr>
+			<td class="footer" colspan="3">Made By Esacadr October 2017</td>
+       </tr>
+    </table>
+    </div>
+<script type="text/javascript" src="app.js">
+
+
+</script>
+ </body>
+</html>

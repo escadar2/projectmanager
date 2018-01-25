@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<table border="1" style="width:100%">
+			<tr style="background-color: #f0f0f0;">
+				<td><a href="#!one">One</a></td>
+				<td><a href="#!two">Two</a></td>
+				<td><a href="#!three">Three</a></td>
+				<td><a href="#!four">Four</a></td>
+				<div><a href="#!four">Four</a></div>
+			</tr>
+			<tr style="background-color: #fff0f0;">
+				<td colspan="4">
+					<div ng-view></div>
+				</td>
+			</tr>
+		</table>
+		
+		<script>
+		var app = angular.module("myApp", ["ngRoute"]);
+		app.config(function($routeProvider) {
+		    $routeProvider.when("/one", {
+		        templateUrl : "one.html",
+		        controller: "oneCtrl"
+		    }).when("/two", {
+		        templateUrl : "two.html",
+		        controller: "twoCtrl"
+		    }).when("/three", {
+		        templateUrl : "three.html"
+		    }).when("/four", {
+		        templateUrl : "four.html"
+		    });
+		});
+		
+		app.controller("oneCtrl", function ($scope, $http){
+			console.log("you clicked one");
+			$http.get("json/employeetable.json")
+		    .then(function(response) {
+		    	$scope.arr = response.data;
+		         console.log( response.data);
+		    });
+			
+			$http.get("customerTable.json")
+		    .then(function(response){
+		    	$scope.arr2 = response.data;
+		    	console.log( $scope.arr2 );
+		    });
+		});
+		
+		app.controller("twoCtrl", function ($scope) {
+			console.log("you clicked two");
+		});
+		
+		</script>
+	</body>
+</html>
